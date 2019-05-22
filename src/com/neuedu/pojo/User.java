@@ -2,13 +2,14 @@ package com.neuedu.pojo;
 
 public class User {
     public User(){}
-    public User(String username, String password) {
+
+    public User(String username, String psw) {
         this.username = username;
-        this.password = password;
+        this.psw = psw;
     }
 
     private String username;
-    private String password;
+    private String psw;
 
     public String getUsername() {
         return username;
@@ -18,19 +19,19 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPsw() {
+        return psw;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPsw(String psw) {
+        this.psw = psw;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                ", psw='" + psw + '\'' +
                 '}';
     }
 }
