@@ -7,4 +7,6 @@ import java.util.List;
 public interface UserDao {
 
     List<User> getAllUser();
+
+    void updateUser(User user);
 }

@@ -40,4 +40,21 @@ public class UserDaoImpl implements UserDao {
 
         return list;
     }
+
+    @Override
+    public void updateUser(User user) {
+        String sql="UPDATE user SET username=?,psw=? WHERE id=?";
+        Connection conn=dds.getConnection();
+        try {
+            qr.update(conn,sql,user.getUsername(),user.getPsw(),user.getId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtils.close(conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
